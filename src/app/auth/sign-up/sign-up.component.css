@@ -1,0 +1,20 @@
+
+.positive {
+    color: #00c9a7;
+}
+
+.negative {
+    color: #ed4c78;
+}
+
+body {
+    background-color: #fff !important;
+}
+
+.main {
+    padding-right: 0rem;
+    padding-left: 0rem;
+    @media (max-width:991px) {
+        height: 100vh;
+    }
+}

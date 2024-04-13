@@ -1,0 +1,481 @@
+.profile-link {
+  text-decoration: none;
+  display: block;
+  font-size: 10px;
+  /* background-color: #6528d8; */
+  box-shadow: 0 0.85em 2em #6528d8;
+  color: #fff;
+  padding: 1em 1.8em;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.navbar-link {
+  text-decoration: none;
+  display: block;
+  font-size: 17px;
+  /* background-color: #6528d8; */
+  /* box-shadow: 0 0.05em 2em #6528d8; */
+  color: #fff;
+  padding: 1em 1.8em;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.video-background {
+  position: relative;
+  overflow: hidden;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust opacity (last value) to control the fading effect */
+  z-index: -1;
+}
+
+.text-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+}
+
+.navbar-brand-logo {
+  width: auto;
+  min-width: unset;
+  max-width: unset;
+  height: 100px;
+  filter: unset;
+  margin-left: 10px;
+}
+
+.nav-item:hover>.nav-link {
+  color: #000 !important
+}
+
+h2 {
+  font-size: 58px;
+  line-height: 1.2em;
+  font-weight: 300;
+  font: 300 54px / 66px "SF Compact Display", sans-serif;
+  margin: 0 0 20px;
+  color: white;
+  margin-left: 970px;
+}
+
+.span {
+  margin: 50px 0 15px;
+  margin-top: 45px;
+  font: 500 20px / 30px "SF Compact Display", sans-serif;
+  color: violet;
+  margin-left: 970px;
+}
+
+p {
+  font: 300 20px / 30px "SF Compact Display", sans-serif;
+  padding: 0;
+  margin: 0 0 15px;
+  color: white;
+  margin-left: 970px;
+}
+
+/*Carousel*/
+
+:host ::ng-deep {
+  .product-item {
+    .product-item-content {
+      border: 1px solid var(--surface-d);
+      border-radius: 3px;
+      margin: .3rem;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .product-image {
+      width: 50%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    }
+  }
+}
+
+.p-carousel-items-content {
+  overflow: hidden;
+  width: 100%;
+}
+
+.p-carousel-items-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.p-carousel .p-carousel-content .p-carousel-next {
+  width: 2rem;
+  height: 2rem;
+  color: #6b7280;
+  border: 0 none;
+  background: transparent;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  margin: 0.5rem;
+}
+
+.carousel-container {
+  position: relative;
+  background-image: url('../../../assets/images/testimonial-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust the last value (alpha) for transparency */
+}
+
+/*Ride Planning left col Part-1*/
+
+.elements-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 150px;
+}
+
+.elements-row-one {
+  z-index: 2;
+}
+
+.elements-row .elements-row-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+  padding: 0 30px;
+}
+
+.elements-row.elements-row-one .phone-image.animate:before {
+  animation: CircleIn ease 2s forwards;
+  animation-delay: 1s;
+}
+
+.elements-row.elements-row-one .phone-image:before {
+  opacity: 0;
+}
+
+.elements-row-one .phone-image:before {
+  content: "";
+  display: block;
+  width: 364px;
+  height: 364px;
+  border-radius: 50%;
+  position: absolute;
+  top: -95px;
+  left: -20px;
+  background-image: url('../../../assets/images/Ellipse.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: .3;
+}
+
+.phone-image img.scroll-animated.animate {
+  animation: PhoneIn ease 1s forwards;
+  animation-delay: 1s;
+}
+
+/* .phone-image img.scroll-animated {
+  opacity: 0;
+} */
+
+@media only screen and (max-width: 1600px) {
+  .elements-row-one .phone-image img {
+    max-height: 100vh;
+  }
+}
+
+.elements-row-one .phone-image img {
+  position: relative;
+  z-index: 2;
+  width: auto !important;
+  margin-right: 0;
+  margin-left: auto;
+  display: block;
+}
+
+.elements-row-one:after {
+  content: "";
+  position: absolute;
+  height: 228px;
+  display: block;
+  bottom: 0;
+  right: 45%;
+  width: 55%;
+  background-repeat: no-repeat;
+  background-image: url('../../../assets/images/purple-right-round.svg');
+  background-position: right center;
+}
+
+/*Ride Planning right col Part-1*/
+
+.elements-row-one .text {
+  max-width: 500px;
+}
+
+h3 {
+  font: 300 54px / 66px "SF Compact Display", sans-serif;
+  margin: 0 0 20px;
+  color: #6528d8;
+  font-size: 58px;
+}
+
+.section-list {
+  padding-left: 15px;
+  list-style: none;
+  font-size: 22px;
+}
+
+.section-list li:before {
+  content: "+";
+  margin: 0 5px 0 -15px;
+}
+
+/*Ride Planning left col Part-2*/
+
+.elements-row-two {
+  z-index: 1;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding-top: 150px;
+  margin-top: -150px;
+}
+
+.elements-row-two .text {
+  max-width: 720px;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.elements-row-two .text .txt-sec-inner {
+  max-width: 410px;
+}
+
+.txt-sec-inner h2 {
+  font: 300 54px / 66px "SF Compact Display", sans-serif;
+  margin: 0 0 20px;
+  color: #6528d8;
+  font-size: 58px;
+}
+
+/*Ride Planning right col Part-2*/
+
+.elements-row-two .right-col {
+  overflow-x: hidden;
+}
+
+.elements-row-two .right-col .phone-image {
+  padding-bottom: 0;
+  overflow: hidden;
+  margin-right: -30px;
+}
+
+.elements-row-two .right-col .phone-image img {
+  max-height: none;
+  max-width: 155%;
+  max-width: 125%;
+}
+
+.elements-row-two img {
+  width: auto !important;
+  margin-right: auto;
+  margin-left: 0;
+  display: block;
+}
+
+.elements-row-two:after {
+  content: "";
+  position: absolute;
+  height: 228px;
+  display: block;
+  bottom: 0;
+  right: -30%;
+  width: 90%;
+  background-repeat: no-repeat;
+  background-image: url('../../../assets/images/purple-right-round.svg');
+  background-position: right center;
+  opacity: .4;
+}
+
+/*Ride Planning left col Part-3*/
+
+.elements-row-three {
+  padding-top: 140px;
+  z-index: 0;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.elements-row-three:before {
+  content: "";
+  position: absolute;
+  height: 298px;
+  width: 415px;
+  display: block;
+  left: 25%;
+  top: 0;
+  transform: translate(-25%, -60px);
+  background-repeat: no-repeat;
+  background-image: url('../../../assets/images/repeat-grid.svg');
+  background-position: center center;
+  opacity: .4;
+}
+
+.elements-row-three .phone-image {
+  margin-left: -180px;
+}
+
+.phone-image {
+  overflow-y: hidden;
+}
+
+.elements-row-three img {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+}
+
+/*Ride Planning right col Part-3*/
+
+.elements-row-three .text {
+  max-width: 510px;
+}
+
+.elements-row-three h2 {
+  font: 300 54px / 66px "SF Compact Display", sans-serif;
+  margin: 0 0 20px;
+  color: #6528d8;
+  font-size: 58px;
+}
+
+.elements-row-three:after {
+  content: "";
+  position: absolute;
+  height: 228px;
+  display: block;
+  bottom: 0;
+  right: 45%;
+  width: 60%;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/images/purple-right-round.svg);
+  background-position: right center;
+}
+
+/*footer*/
+
+footer {
+  background-image: url(../../../assets/images/footer-bg.png);
+  background-size: 100% 100%;
+  display: block;
+  padding: 60px 0 50px;
+  color: #eee;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@media (min-width: 768px){
+.col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+}
+
+footer .logo {
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+footer .footer-link {
+  color: #6528d8;
+  font-size: 15px;
+}
+
+footer .footer-link a {
+  margin-right: 0 !important;
+  color: #6528d8;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+footer .mail {
+  color: #6528d8;
+  font-weight: 500;
+  text-align: right;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+footer .social {
+  margin-top: 32px;
+  text-align: right;
+}
+
+footer .social a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 3px;
+  background: #6528d8;
+  border-radius: 50%;
+  transition: all .3s ease-out;
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer .social a>:hover{
+  background: pink;
+  border-radius: 50%;
+  color: pink;
+
+}
+
+footer .social a img {
+  width: 100%;
+}

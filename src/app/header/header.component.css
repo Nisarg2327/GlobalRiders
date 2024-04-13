@@ -1,0 +1,51 @@
+.navbar-brand-logo {
+    width: auto;
+    min-width: unset;
+    max-width: unset;
+    height: 80px;
+    filter: unset;
+    margin-left: 10px;
+    margin-bottom: 0px !important;
+}
+
+.navbar-light{
+    transition: all 5s;
+}
+
+.nav-link.active,
+.navbar-nav .nav-link.active {
+    background: #d3e3fd;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 5px;
+    color: #000 !important;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.nav-item:hover>.nav-link {
+    color: white !important;
+  }
+
+.hidden {
+    display: none;
+    top: -56px;
+}
+
+.search-form {
+    display: flex;
+}
+
+.nav-item:hover>.nav-link {
+    color: #000 !important
+}
+
+.dropdown-menu.show {
+    margin-top: 20px !important;
+}
+
+.me-5 {
+    margin-right: 5rem !important;
+}

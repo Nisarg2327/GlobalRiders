@@ -1,0 +1,13 @@
+.invalid-feedback {
+    display: block !important;
+    line-height: normal !important;
+    color: #fe0505 !important;
+}
+.error-message {
+    min-height: 1.1em;
+    display: inline-block;
+}
+
+.required {
+    color: #fe0505;
+}
