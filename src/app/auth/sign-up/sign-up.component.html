@@ -1,152 +1,174 @@
 <main class="main bg-white">
   <div class="container-fluid px-3">
-      <div class="row">
-          <div class="col-lg-6 d-flex justify-content-center min-vh-lg-100  bg-white">
-              <div class="w-100 content-space-t-1 content-space-t-lg-1 content-space-b-0  w-max-30">
-                <div class="card card-lg mb-5">
-                  <div class="card-body p-3 p-lg-6">
-                    <form class="" (ngSubmit)="onSubmit()" #form="ngForm" [style.display]="(isSuccessResponse) ? 'none' : 'inline'">
-                      <div class="text-center">
-                        <div class="mb-5">
-                          <h1 class="display-5">Sign Up</h1>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="mb-2 pb-1">
-                          <label class="form-label" for="firstName">First Name <span class="required">*</span></label>
-                          <input type="text" class="form-control" [(ngModel)]="firstNameValue" name="firstName"
-                            #firstName="ngModel" maxLength="32" required />
-                            <div class="error-message">
-                              <span *ngIf="
-                                    !firstName.valid && firstNameValue.length == 0 && (form.submitted || firstName.touched)
-                                  " class="invalid-feedback">First Name is Required</span>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="mb-2 pb-1">
-                          <label class="form-label" for="lastName">Last Name</label>
-                          <input type="text" class="form-control" [(ngModel)]="lastNameValue" name="lastName" #lastName="ngModel"
-                            maxLength="32" required />
-                            <div class="error-message">
-                              <span *ngIf="
-                                    !lastName.valid && lastNameValue.length == 0 && (form.submitted || lastName.touched)
-                                    " class="invalid-feedback">Last Name is Required</span>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="mb-2 pb-1">
-                        <label class="form-label" for="signupEmail">Email</label>
-                        <input type="email" class="form-control " name="email" [(ngModel)]="emailValue" placeholder=""
-                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required #email="ngModel" maxLength="128"/>
-                          <div class="error-message">
-                            <span *ngIf="!email.valid && emailValue.length == 0 && (form.submitted || email.touched)" class="invalid-feedback">Email is Required</span>  
-                            <span *ngIf="!email.valid && email.touched && emailValue.length > 0 && form.submitted" class="invalid-feedback">Email is Invalid</span>
-                          </div>
-                      </div>
-                
-                      <div class="mb-2 pb-1">
-                        <label class="form-label w-100" for="signupSrPassword">
-                          <span class="d-flex justify-content-between align-items-center">
-                            <span>Password</span>
-                          </span>
-                        </label>
-                        <div class="input-group input-group-merge" data-hs-validation-validate-class>
-                          <input [type]="showPassword ? 'text' : 'password'" autocomplete="new-password" class="form-control"
-                            name="password" [(ngModel)]="passwordValue" placeholder=" " required
-                            pattern="^(?=.*?[A-Z])(.{,}|(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,})$" #password="ngModel"
-                             maxLength="32" />
-                          <a id="changePassTarget" class="input-group-append input-group-text" href="javascript:;">
-                            <i [ngClass]="{
+    <div class="row" *ngIf="isLoading == false">
+      <div class="col-lg-6 pb-5 py-lg-0 d-none d-lg-flex justify-content-center align-items-center min-vh-lg-100 position-relative bg-light px-0">
+        <app-info></app-info>
+      </div>
+      <div class="col-lg-6 d-flex justify-content-center min-vh-lg-100 bg-white form-css">
+        <div class="w-75 content-space-t-1 content-space-t-lg-3 content-space-b-0 ">
+          <div class="d-flex justify-content-center mb-2">
+            <img class="zi-2 brand-logo" src="assets/images/logo4.png" alt="GlobalRiders Logo" />
+          </div>
+          <div class="card card-lg mb-1">
+            <div class="card-body p-3 p-lg-6">
+              <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" [style.display]="(isSuccessResponse) ? 'none' : 'inline'">
+                <div class="text-center">
+                  <div class="mb-5">
+                    <h1 class="display-5">Sign Up</h1>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-2 pb-1">
+                    <label class="form-label" for="firstName">First Name <span class="required">*</span></label>
+                    <input type="text" class="form-control" formControlName="firstName" name="firstName"
+                      [(ngModel)]="firstNameValue" maxLength="32" required />
+                    <div class="error-message3">
+                      <!-- <span *ngIf="signUpForm.get('firstName').invalid && signUpForm.get('firstName').touched" class="invalid-feedback">First Name is Required</span> -->
+                      <span
+                        *ngIf="(submitted || signUpForm.get('firstName')?.touched) && signUpForm.get('firstName')?.errors"
+                        class="invalid-feedback">
+                        First Name is Required
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-2 pb-1">
+                    <label class="form-label" for="lastName">Last Name <span class="required">*</span></label>
+                    <input type="text" class="form-control" formControlName="lastName" maxLength="32" required />
+                    <div class="error-message3">
+                      <span
+                        *ngIf="(submitted || signUpForm.get('lastName')?.touched) && signUpForm.get('lastName')?.errors"
+                        class="invalid-feedback">
+                        Last Name is Required
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-2 pb-1">
+                  <label class="form-label" for="signupEmail">Email <span class="required">*</span></label>
+                  <input type="email" class="form-control" formControlName="email" placeholder="" maxLength="128" [(ngModel)]="emailValue"
+                    required />
+                  <div class="error-message3">
+                    <span *ngIf="(submitted || signUpForm.get('email')?.touched) && signUpForm.get('email')?.errors && emailValue.length == 0"
+                      class="invalid-feedback">Email is Required</span>
+                    <span *ngIf="signUpForm.get('email')?.touched && signUpForm.get('email')?.errors?.['email']"
+                      class="invalid-feedback">Email is Invalid</span>
+                  </div>
+                </div>
+
+                <div class="mb-1 pb-1">
+                  <label class="form-label w-100" for="signupSrPassword">
+                    <span class="d-flex justify-content-between align-items-center">
+                      <span>Password <span class="required">*</span></span>
+                    </span>
+                  </label>
+                  <div class="input-group input-group-merge" data-hs-validation-validate-class>
+                    <input [type]="showPassword ? 'text' : 'password'" autocomplete="new-password" class="form-control"
+                      formControlName="password" [(ngModel)]="passwordValue" maxLength="32" required/>
+                    <a id="changePassTarget" class="input-group-append input-group-text" href="javascript:;">
+                      <i [ngClass]="{
                                 'bi-eye-slash': !showPassword,
                                 'bi-eye': showPassword
                               }" (click)="togglePasswordTextType()"></i>
-                          </a>
-                        </div>
-                        
-                        <div class="error-message">
-                          <span *ngIf="
-                              !password.valid && passwordValue.length == 0 && (form.submitted || password.touched)
-                            " class="invalid-feedback">Password is Required</span>
-                
-                          <div class="error-message">
-                            <span *ngIf="
-                                !password.valid && passwordValue.length > 0 && (form.submitted || password.touched)
-                              " class="invalid-feedback">
-                              <span [ngClass]="{
+                    </a>
+                  </div>
+
+                  <div class="error-message2">
+                    <span
+                      *ngIf="(submitted || signUpForm.get('password')?.touched) && signUpForm.get('password')?.errors && passwordValue.length == 0"
+                      class="invalid-feedback">Password is Required</span>
+
+                    <div class="error-message">
+                      <span *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.errors && passwordValue.length > 0"
+                        class="invalid-feedback">
+                        <span [ngClass]="{
                                   positive: validForMinimumLength,
                                   negative: !validForMinimumLength
                                 }">
-                                Use 8 or more characters</span>
-                
-                              <span [ngClass]="{
+                          Use 8 or more characters </span>
+
+                        <span [ngClass]="{
                                   positive: validForUpperCase,
                                   negative: !validForUpperCase
                                 }">
-                                atleast one uppercase</span>
-                              <span [ngClass]="{
+                          with atleast one uppercase </span>
+                        <span [ngClass]="{
                                   positive: validForLowerCase,
                                   negative: !validForLowerCase
                                 }">
-                                and lowercase character</span>
-                
-                              <span [ngClass]="{
+                          and lowercase character </span>
+
+                        <span [ngClass]="{
                                   positive: validForNumber,
                                   negative: !validForNumber
                                 }">
-                                with numbers</span>
-                              <span [ngClass]="{
+                          with numbers</span>
+                        <span [ngClass]="{
                                   positive: validForSymbol,
                                   negative: !validForSymbol
                                 }">
-                                &amp; symbols</span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                      <div class="form-check mb-3 pb-1">
-                        <input class="form-check-input" type="checkbox" id="termsCheckbox" [(ngModel)]="termsChecked" name="term"
-                          required />
-                        <label class="form-check-label" for="termsCheckbox">
-                          I accept the 
-                          <!-- <a [routerLink]="tAndCRouterLink">{{Locale.TERMS_AND_CONDITIONS | translate}}</a> -->
-                          <button class="bg-transparent text-primary border-0 p-0" (click)="onTermsConditionClick()">Terms and Conditions</button>
-                        </label>
-                        <div class="error-message">
-                          <span  *ngIf="!termsChecked && form.submitted" class="invalid-feedback">Please accept our Terms and Conditions</span>
-                        </div>
-                      </div>
-                      <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">
-                          Sign Up
-                        </button>
-                        <span class="alert alert-soft-danger mt-3 mb-0 d-none">An account already exists for this email address</span>
-                        <span *ngIf="errorMessage.length > 0" class="alert alert-soft-danger mt-3 mb-0">{{errorMessage}}</span>
-                      </div>
-                    </form>
-                    <div class="text-center" id="successmessage" [style.display]="(isSuccessResponse) ? 'inline' : 'none'">
-                      <div>
-                         <div class="w-75 w-sm-50 mx-auto mb-1">
-                            <i class="bi bi-check2-circle text-success display-2"></i>
-                         </div>
-                            <h2 class="display-6">
-                              Welcome, {{firstNameValue}}!
-                            </h2>
-                            <p class="text-body mb-0">Your registration process has been successfully completed.
-                            </p>
-                            <p class="text-body  mb-0"> We're happy to see you on our platform! </p>
-                            <div class="mt-4">
-                               <a class="btn btn-primary w-120" routerLink="">Proceed to Sign In
-                               </a>
-                            </div>
-                      </div>
-                   </div>
+                          &amp; symbols</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-check ">
+                  <input class="form-check-input" type="checkbox" id="termsCheckbox" formControlName="term" />
+                  <label class="form-check-label" for="termsCheckbox">
+                    I accept the
+                    <button type="button" class="bg-transparent text-primary border-0 p-0"
+                      (click)="onTermsConditionClick()">Terms and Conditions</button>
+                  </label>
+                  <br>
+                  <div class="error-message">
+                    <span *ngIf="(submitted || signUpForm.get('term')?.touched) && signUpForm.get('term')?.errors"
+                      class="invalid-feedback">Please accept our Terms and Conditions</span>
+                  </div>
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary">Sign Up</button>
+                  <span class="alert alert-soft-danger mt-3 mb-0 d-none">An account already exists for this email
+                    address</span>
+                  <span *ngIf="errorMessage.length > 0"
+                    class="alert alert-soft-danger mt-3 mb-0">{{errorMessage}}</span>
+                </div>
+                <div class="text-center">
+                  <a class="btn btn-link fw-normal text-decoration-none" routerLink="">
+                    <i class="bi-chevron-left"></i>
+                    Back to Sign In
+                  </a>
+                </div>
+              </form>
+
+              <div class="text-center" id="successmessage" [style.display]="(isSuccessResponse) ? 'inline' : 'none'">
+                <div>
+                  <div class="w-75 w-sm-50 mx-auto mb-1">
+                    <i class="bi bi-check2-circle text-success display-2"></i>
+                  </div>
+                  <h2 class="display-6">
+                    Welcome, {{firstNameValue}}!
+                  </h2>
+                  <p class="text-body mb-0">Your registration process has been successfully completed.
+                  </p>
+                  <p class="text-body  mb-0"> We're happy to see you on our platform! </p>
+                  <div class="mt-4">
+                    <a class="btn btn-primary w-120" routerLink="">Proceed to Sign In
+                    </a>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </div>
 </main>
+
+<div *ngIf="isLoading == true" style="text-align: center; margin-top: 100px; margin-left: 50%;">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+

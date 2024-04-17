@@ -1,12 +1,13 @@
 import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CarouselModule } from 'primeng/carousel';
+
 import { AuthComponent } from '../auth/auth.component';
 import { DashboardComponent } from '../components/dashboard/Dashboard.component';
 import { HomeComponent } from '../components/home/home.component';
 import { ExploreComponent } from '../components/explore/explore.component';
 import { ChatComponent } from '../components/chat/chat.component';
 import { ProfileComponent } from '../components/profile/profile.component';
-import { CarouselModule } from 'primeng/carousel';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/auth', pathMatch: 'full' },
@@ -21,8 +22,8 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [DashboardComponent],
     imports: [RouterModule.forRoot(appRoutes),
-        CarouselModule,],
-    exports: [RouterModule],
+        CarouselModule],
+    exports: [RouterModule]
     
 })
 export class ComponentsModule { }

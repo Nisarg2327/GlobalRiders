@@ -37,7 +37,7 @@ import { SignUpService } from './auth/sign-up/sign-up.service';
         TagModule,
         HeaderModule,
         AuthModule,
-        ComponentsModule,
+        ComponentsModule
     ]
 })
 export class AppModule { }

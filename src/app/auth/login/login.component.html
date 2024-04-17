@@ -1,31 +1,98 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 offset-md-3 mt-5">
-      <!-- <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert> -->
-      <div class="alert alert-success" *ngIf="!error && isLoggedIn">
-        <p>Logged In Successfully</p>
+<main class="main bg-white">
+  <div class="container-fluid px-3">
+    <div class="row" *ngIf="isLoading == false">
+      <div
+        class="col-lg-6 pb-5 py-lg-0 d-none d-lg-flex justify-content-center align-items-center min-vh-lg-100 position-relative bg-light px-0">
+        <app-info></app-info>
       </div>
-      <div *ngIf="isLoading" style="text-align: center; margin-top: 100px; margin-left: 50%;">
-        <app-loading-spinner></app-loading-spinner>
+      <div class="col-lg-6 d-flex justify-content-center min-vh-lg-100 bg-white form-css">
+        <div class="w-75 content-space-t-1 content-space-t-lg-3 content-space-b-0 ">
+          <div class="d-flex justify-content-center mb-5">
+            <img class="zi-2 brand-logo" src="assets/images/logo4.png" alt="GlobalRiders Logo" />
+          </div>
+          <div class="card card-lg mb-5">
+            <div class="card-body p-3 p-lg-6">
+              <form [formGroup]="logInForm" (ngSubmit)="onSubmit(logInForm)">
+                <div class="text-center">
+                  <div class="mb-5">
+                    <h1 class="display-5">Sign In</h1>
+                  </div>
+                </div>
+                <div class="mb-2 pb-1">
+                  <label class="form-label" for="signupEmail">Email</label>
+                  <input type="email" class="form-control" formControlName="email" placeholder="" maxLength="128"
+                    [(ngModel)]="emailValue" required />
+                  <div class="error-message3">
+                    <span
+                      *ngIf="(submitted || logInForm.get('email')?.touched) && logInForm.get('email')?.errors && emailValue.length == 0"
+                      class="invalid-feedback">Email is Required</span>
+                    <span *ngIf="logInForm.get('email')?.touched && logInForm.get('email')?.errors?.['email']"
+                      class="invalid-feedback">Email is Invalid</span>
+                  </div>
+                </div>
+
+                <div class="mb-2 pb-1">
+                  <label class="form-label" for="signupSrPassword">Password</label>
+                  <div class="input-group input-group-merge" data-hs-validation-validate-class>
+                    <input [type]="showPassword ? 'text' : 'password'" autocomplete="new-password" class="form-control"
+                      formControlName="password" [(ngModel)]="passwordValue" maxLength="32" required />
+                    <a id="changePassTarget" class="input-group-append input-group-text" href="javascript:;">
+                      <i [ngClass]="{
+                                  'bi-eye-slash': !showPassword,
+                                  'bi-eye': showPassword
+                                }" (click)="togglePasswordTextType()"></i>
+                    </a>
+                  </div>
+                  <div class="error-message row">
+                    <span
+                      *ngIf="(submitted || logInForm.get('password')?.touched) && logInForm.get('password')?.errors && passwordValue.length == 0"
+                      class="invalid-feedback">Password is Required</span>
+
+                    <span
+                      *ngIf="logInForm.get('password')?.touched && logInForm.get('password')?.errors && passwordValue.length > 0"
+                      class="invalid-feedback">Password is Invalid</span>
+
+                    <span class="d-flex justify-content-end">
+                      <a class="small mb-0 look" [routerLink]="forgotPasswordNavigationUrl">Forget Password?</a>
+                    </span>
+                  </div>
+
+                </div>
+
+                <div class="form-check mb-2 w-auto">
+                  <input class="form-check-input" name="rememberMeCheckbox" type="checkbox"
+                    [(ngModel)]="rememberMeCheckboxValue" [checked]="rememberMeCheckboxValue" id="rememberMeCheckbox"
+                    (change)="onRememberMeCheckChanged($event)" />
+                  <label class="form-check-label" for="rememberMeCheckbox">
+                    Remember Me
+                  </label>
+                </div>
+
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary">
+                    Sign In
+                  </button>
+                </div>
+                <label class="form-label w-100" for="signupSrPassword" style="padding-top: 10px;">
+                  <span> Dont have an account?
+                    <a class="d-flex justify-content-between align-items-center">
+                      <a class="small mb-0 look" [routerLink]="signUpNavigationUrl">Sign Up</a>
+                    </a>
+                  </span>
+                </label>
+                <div class="d-grid error-message2">
+                  <span *ngIf="showErrorMessage == true"
+                    class="alert alert-soft-danger mt-2 mb-0">{{errorMessage}}</span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      <form (ngSubmit)="onSubmit(authForm)" #authForm ="ngForm" *ngIf="!isLoading">
-        <div class="form-group mt-2">
-          <label for="email">E-Mail</label>
-          <input type="email" name="email" id="email" class="form-control" ngModel required email>
-        </div>
-        <div class="form-group mt-2">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" class="form-control" ngModel required minlength="6">
-        </div>
-        <div class="form-group mt-3">
-          <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">
-            {{ isLoginMode ? 'Login' : 'Sign-Up' }}
-          </button> |
-          <button class="btn btn-primary" type="button" (click)="switchMode()">
-            Switch to {{ isLoginMode ? 'Sign-Up' : 'Login' }}
-          </button>
-        </div>
-      </form>
     </div>
   </div>
+</main>
+
+<div *ngIf="isLoading == true" style="text-align: center; margin-top: 100px; margin-left: 50%;">
+  <app-loading-spinner></app-loading-spinner>
 </div>

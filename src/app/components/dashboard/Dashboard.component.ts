@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './dashboard.service';
 import { Dashboard } from '../../core/model/dashboard.model';
 import { AuthService } from 'src/app/auth/auth.service';
-import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { trigger, style, animate, transition, keyframes } from '@angular/animations';
+import Typewriter from 'typewriter-effect';
+
 
 @Component({
   selector: 'dashboard',
@@ -18,11 +20,14 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
       ])
     ])
   ]
+  
 })
 export class DashboardComponent implements OnInit {
   products: Dashboard[] | any;
 
   responsiveOptions: any[] | undefined;
+
+  
 
   constructor(private dashboardService: DashboardService,
     private authService: AuthService) { }
@@ -49,6 +54,23 @@ export class DashboardComponent implements OnInit {
         numScroll: 1
       }
     ];
+
+    var app = document.getElementById('app');
+
+    var typewriter = new Typewriter(app, {
+      loop: true,
+      delay: 75,
+    });
+
+    typewriter
+      .pauseFor(2500)
+      .typeString('A simple yet powerful native javascript')
+      .pauseFor(300)
+      .deleteChars(10)
+      .typeString('<strong>JS</strong> plugin for a cool typewriter effect and ')
+      .typeString('<strong>only <span style="color: #27ae60;">5kb</span> Gzipped!</strong>')
+      .pauseFor(1000)
+      .start();
   }
 
   performLogout() {

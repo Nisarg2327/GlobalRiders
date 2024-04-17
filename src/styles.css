@@ -4,8 +4,9 @@
     color: #fe0505 !important;
 }
 .error-message {
-    min-height: 1.1em;
+    min-height: 1.5em;
     display: inline-block;
+    position: relative;
 }
 
 .required {

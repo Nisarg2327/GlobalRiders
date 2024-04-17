@@ -11,10 +11,40 @@ body {
     background-color: #fff !important;
 }
 
-.main {
-    padding-right: 0rem;
-    padding-left: 0rem;
-    @media (max-width:991px) {
-        height: 100vh;
+.form-css {
+    margin: 15px 0px;
+}
+
+.brand-logo {
+    width: auto;
+    min-width: unset;
+    max-width: unset;
+    height: 80px;
+    filter: unset;
+    margin-left: 10px;
+    margin-bottom: 0px !important;
+}
+
+@media (min-width: 1200px) {
+    .display-5 {
+        font-size: 1.5rem;
     }
+}
+
+.display-5 {
+    font-size: calc(1.275rem + 0.3vw);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.error-message3 {
+    min-height: 1.4em;
+    display: flex;
+    position: relative;
+}
+
+.error-message2 {
+    min-height: 1.4em;
+    display: flex;
+    position: relative;
 }

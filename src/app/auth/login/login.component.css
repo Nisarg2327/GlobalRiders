@@ -1,0 +1,61 @@
+.brand-logo {
+    width: auto;
+    min-width: unset;
+    max-width: unset;
+    height: 80px;
+    filter: unset;
+    margin-left: 10px;
+    margin-bottom: 0px !important;
+}
+
+@media (min-width: 1200px) {
+    .display-5 {
+        font-size: 1.5rem;
+    }
+}
+
+.display-5 {
+    font-size: calc(1.275rem + 0.3vw);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.form-css {
+    margin: 30px 0px;
+
+}
+
+.look {
+    color: #004dff;
+    text-decoration: none;
+}
+
+.alert-soft-danger {
+    color: #ed4c78;
+    background-color: rgba(237, 76, 120, 0.15);
+}
+
+.w-75 {
+    width: 60% !important;
+}
+
+.d-flex.justify-content-end {
+    position: absolute;
+    top: 2px;
+}
+
+.error-message2 {
+    min-height: 2.2em;
+    display: inline-block;
+    position: relative;
+}
+
+.error-message3 {
+    min-height: 1.1em;
+    display: inline-block;
+    position: relative;
+}
+
+.form-label{
+    margin-bottom: 0rem !important;
+}
