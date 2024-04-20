@@ -94,6 +94,16 @@ p {
   margin-left: 970px;
 }
 
+.navigation-example {
+  background-image: url('../../../assets/images/loginbg4.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
 /*Carousel*/
 
 :host ::ng-deep {
@@ -135,8 +145,8 @@ p {
 }
 
 .carousel-container {
-  position: relative;
   background-image: url('../../../assets/images/testimonial-bg.png');
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -150,6 +160,23 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   /* Adjust the last value (alpha) for transparency */
+}
+
+/*HWy CHoose us*/
+
+@media (min-width: 576px) {
+  .pb-sm-1,
+  .py-sm-1 {
+    padding-bottom: .25rem !important;
+  }
+}
+
+.gray8 {
+  color: #888888; /* Adjust color if needed */
+}
+
+.single-line {
+  white-space: nowrap; /* Prevent text from wrapping onto multiple lines */
 }
 
 /*Ride Planning left col Part-1*/
@@ -240,7 +267,7 @@ p {
   max-width: 500px;
 }
 
-h3 {
+.txt-sec h3 {
   font: 300 54px / 66px "SF Compact Display", sans-serif;
   margin: 0 0 20px;
   color: #6528d8;
@@ -415,12 +442,12 @@ footer {
   margin-left: -15px;
 }
 
-@media (min-width: 768px){
-.col-md-6 {
+@media (min-width: 768px) {
+  .col-md-6 {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
-}
+  }
 }
 
 footer .logo {
@@ -461,7 +488,7 @@ footer .social a {
   display: inline-block;
   width: 30px;
   height: 30px;
-  margin: 0 3px;
+  margin-left: 6px;
   background: #6528d8;
   border-radius: 50%;
   transition: all .3s ease-out;
@@ -469,7 +496,7 @@ footer .social a {
   text-decoration: none;
 }
 
-footer .social a>:hover{
+footer .social a>:hover {
   background: pink;
   border-radius: 50%;
   color: pink;

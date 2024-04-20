@@ -5,7 +5,6 @@ import { UtilityService } from 'src/app/shared/utility.service';
 import { Component, Input } from '@angular/core';
 import { ROUTE } from 'src/app/core/constant/route.constant';
 import { Router } from '@angular/router';
-import { SignUpService } from './sign-up.service';
 import { AuthService } from '../auth.service';
 
 @Component({

@@ -15,7 +15,7 @@ import { HeaderModule } from './header/header.module';
 import { AuthModule } from './auth/auth.module';
 import { HeaderComponent } from './header/header.component';
 import { ComponentsModule } from './components/components.module';
-import { SignUpService } from './auth/sign-up/sign-up.service';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
     declarations: [
@@ -23,7 +23,7 @@ import { SignUpService } from './auth/sign-up/sign-up.service';
         AuthComponent,
         HeaderComponent,
     ],
-    providers: [DashboardService, SignUpService],
+    providers: [DashboardService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,

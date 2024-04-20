@@ -1,8 +1,12 @@
+main {
+    height: 737px;
+}
+
 .brand-logo {
     width: auto;
     min-width: unset;
     max-width: unset;
-    height: 80px;
+    height: 100px;
     filter: unset;
     margin-left: 10px;
     margin-bottom: 0px !important;
@@ -12,6 +16,19 @@
     .display-5 {
         font-size: 1.5rem;
     }
+}
+
+.bg-image {
+    background-image: url('../../../assets/images/loginbg4.jpg');
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust the last value (0.8) for opacity */
 }
 
 .display-5 {
@@ -26,7 +43,7 @@
 }
 
 .look {
-    color: #004dff;
+    color: #5405e7;
     text-decoration: none;
 }
 
@@ -36,7 +53,7 @@
 }
 
 .w-75 {
-    width: 60% !important;
+    width: 75% !important;
 }
 
 .d-flex.justify-content-end {
@@ -56,6 +73,10 @@
     position: relative;
 }
 
-.form-label{
+.form-label {
     margin-bottom: 0rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 2rem !important;
 }

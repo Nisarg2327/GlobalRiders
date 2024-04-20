@@ -8,13 +8,21 @@
     margin-bottom: 0px !important;
 }
 
-.navbar-light{
-    transition: all 5s;
-}
+.profile-link {
+    text-decoration: none;
+    display: block;
+    font-size: 10px;
+    /* background-color: #6528d8; */
+    box-shadow: 0 0.85em 2em #6528d8;
+    color: #fff;
+    padding: 1em 1.8em;
+    border-radius: 10px;
+    font-weight: 700;
+  }
 
 .nav-link.active,
 .navbar-nav .nav-link.active {
-    background: #d3e3fd;
+    background: #6528d8;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     border-radius: 5px;
@@ -22,12 +30,8 @@
 }
 
 .nav-link {
-    color: black !important;
-}
-
-.nav-item:hover>.nav-link {
     color: white !important;
-  }
+}
 
 .hidden {
     display: none;
@@ -38,14 +42,57 @@
     display: flex;
 }
 
-.nav-item:hover>.nav-link {
-    color: #000 !important
+.nav-item:hover>.nav-link:not(.active) {
+    color: #6528d8 !important;
 }
 
+.nav-item:hover>.nav-link.active {
+    color: #fff !important;
+}
+
+.profile:hover .bi-person-circle, 
+.profile:hover .text-white {
+    color: #6528d8 !important;
+}
 .dropdown-menu.show {
-    margin-top: 20px !important;
+    margin-top: 9px !important;
 }
 
 .me-5 {
     margin-right: 5rem !important;
+}
+
+.navbar-scrolled{
+    background-color: #000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar{
+    transition: all 0.5s;
+}
+
+.btn-outline-light {
+    --bs-btn-color: #f8f9fa;
+    --bs-btn-border-color: #f8f9fa;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #6528d8;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: 248, 249, 250;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #f8f9fa;
+    --bs-btn-active-border-color: #f8f9fa;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #f8f9fa;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #f8f9fa;
+    --bs-gradient: none;
+}
+
+.dropdown-menu {
+    --bs-dropdown-color: #c7aff3;
+    --bs-dropdown-bg: #c7aff3;
+    --bs-dropdown-link-hover-color: #6528d8;
+    --bs-dropdown-link-hover-bg: #e1e4e7;
+    --bs-dropdown-link-active-color: #fff;
+    --bs-dropdown-link-active-bg: #6528d8;
 }

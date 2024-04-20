@@ -1,29 +1,25 @@
-<main class="main bg-white">
+<main class="main bg-image" *ngIf="isLoading == false">
   <div class="container-fluid px-3">
-    <div class="row" *ngIf="isLoading == false">
-      <div class="col-lg-6 pb-5 py-lg-0 d-none d-lg-flex justify-content-center align-items-center min-vh-lg-100 position-relative bg-light px-0">
-        <app-info></app-info>
-      </div>
-      <div class="col-lg-6 d-flex justify-content-center min-vh-lg-100 bg-white form-css">
+    <div class="row">
+      <div class="col-lg-5 d-flex justify-content-center min-vh-lg-100 form-css">
         <div class="w-75 content-space-t-1 content-space-t-lg-3 content-space-b-0 ">
-          <div class="d-flex justify-content-center mb-2">
-            <img class="zi-2 brand-logo" src="assets/images/logo4.png" alt="GlobalRiders Logo" />
+          <div class="d-flex justify-content-center mb-5">
+            <img class="zi-2 brand-logo" src="assets/images/white-logo.png" alt="GlobalRiders Logo" />
           </div>
           <div class="card card-lg mb-1">
             <div class="card-body p-3 p-lg-6">
               <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" [style.display]="(isSuccessResponse) ? 'none' : 'inline'">
                 <div class="text-center">
                   <div class="mb-5">
-                    <h1 class="display-5">Sign Up</h1>
+                    <h1 class="display-5 text-white">Sign Up</h1>
                   </div>
                 </div>
                 <div class="row">
                   <div class="mb-2 pb-1">
-                    <label class="form-label" for="firstName">First Name <span class="required">*</span></label>
+                    <!-- <label class="form-label text-white" for="firstName">First Name <span class="required">*</span></label> -->
                     <input type="text" class="form-control" formControlName="firstName" name="firstName"
-                      [(ngModel)]="firstNameValue" maxLength="32" required />
+                      [(ngModel)]="firstNameValue" placeholder="First Name" maxLength="32" required />
                     <div class="error-message3">
-                      <!-- <span *ngIf="signUpForm.get('firstName').invalid && signUpForm.get('firstName').touched" class="invalid-feedback">First Name is Required</span> -->
                       <span
                         *ngIf="(submitted || signUpForm.get('firstName')?.touched) && signUpForm.get('firstName')?.errors"
                         class="invalid-feedback">
@@ -35,8 +31,9 @@
                 </div>
                 <div class="row">
                   <div class="mb-2 pb-1">
-                    <label class="form-label" for="lastName">Last Name <span class="required">*</span></label>
-                    <input type="text" class="form-control" formControlName="lastName" maxLength="32" required />
+                    <!-- <label class="form-label text-white" for="lastName">Last Name <span class="required">*</span></label> -->
+                    <input type="text" class="form-control" formControlName="lastName" maxLength="32" 
+                    name="lastName" placeholder="Last Name" required />
                     <div class="error-message3">
                       <span
                         *ngIf="(submitted || signUpForm.get('lastName')?.touched) && signUpForm.get('lastName')?.errors"
@@ -47,9 +44,9 @@
                   </div>
                 </div>
                 <div class="mb-2 pb-1">
-                  <label class="form-label" for="signupEmail">Email <span class="required">*</span></label>
-                  <input type="email" class="form-control" formControlName="email" placeholder="" maxLength="128" [(ngModel)]="emailValue"
-                    required />
+                  <!-- <label class="form-label text-white" for="signUpEmail">Email <span class="required">*</span></label> -->
+                  <input type="email" class="form-control" formControlName="email" placeholder="" maxLength="128" 
+                  [(ngModel)]="emailValue" placeholder="Email" required />
                   <div class="error-message3">
                     <span *ngIf="(submitted || signUpForm.get('email')?.touched) && signUpForm.get('email')?.errors && emailValue.length == 0"
                       class="invalid-feedback">Email is Required</span>
@@ -59,14 +56,14 @@
                 </div>
 
                 <div class="mb-1 pb-1">
-                  <label class="form-label w-100" for="signupSrPassword">
+                  <!-- <label class="form-label w-100 text-white" for="signupSrPassword">
                     <span class="d-flex justify-content-between align-items-center">
                       <span>Password <span class="required">*</span></span>
                     </span>
-                  </label>
+                  </label> -->
                   <div class="input-group input-group-merge" data-hs-validation-validate-class>
                     <input [type]="showPassword ? 'text' : 'password'" autocomplete="new-password" class="form-control"
-                      formControlName="password" [(ngModel)]="passwordValue" maxLength="32" required/>
+                      formControlName="password" [(ngModel)]="passwordValue" placeholder="Password" maxLength="32" required/>
                     <a id="changePassTarget" class="input-group-append input-group-text" href="javascript:;">
                       <i [ngClass]="{
                                 'bi-eye-slash': !showPassword,
@@ -117,7 +114,7 @@
 
                 <div class="form-check ">
                   <input class="form-check-input" type="checkbox" id="termsCheckbox" formControlName="term" />
-                  <label class="form-check-label" for="termsCheckbox">
+                  <label class="form-check-label text-white" for="termsCheckbox">
                     I accept the
                     <button type="button" class="bg-transparent text-primary border-0 p-0"
                       (click)="onTermsConditionClick()">Terms and Conditions</button>
@@ -163,6 +160,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-lg-6 pb-5 py-lg-0 d-none d-lg-flex justify-content-center min-vh-lg-100 position-relative px-0">
+        <app-info></app-info>
       </div>
     </div>
   </div>

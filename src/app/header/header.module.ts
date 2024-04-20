@@ -18,10 +18,10 @@ const appRoutes: Routes = [
     { path: '', redirectTo: '/auth', pathMatch: 'full' },
     { path: 'auth', component: AuthComponent },
     { path: 'dashboard', component: DashboardComponent },
-    { path: 'dashboard/home', component: HomeComponent },
-    { path: 'dashboard/explore', component: ExploreComponent },
-    { path: 'dashboard/chat', component: ChatComponent },
-    { path: 'dashboard/profile', component: ProfileComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'explore', component: ExploreComponent },
+    { path: 'chat', component: ChatComponent },
+    { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({

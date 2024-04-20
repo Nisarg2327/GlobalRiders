@@ -20,6 +20,7 @@ interface AuthResponseData  {
 })
 export class AuthService {
   user = new BehaviorSubject<User | null>(null)
+  hasLogIn = new BehaviorSubject<boolean | null>(null);
   private tokenExpirationTimer: any
 
   constructor(private http: HttpClient,

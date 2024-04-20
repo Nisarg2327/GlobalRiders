@@ -1,73 +1,16 @@
 <main id="dashboard" role="main" class="main">
   <div class="content center">
     <div class="video-background">
-      <video autoplay muted loop id="background-video">
-        <source src="assets/images/background-video.mp4" type="video/mp4">
+      <video autoplay="true" muted loop id="background-video" #backgroundVideo>
+        <source src="../../../assets/images/background-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="overlay"></div>
       <div class="text-content">
-        <nav class="navbar navbar-expand-lg">
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" routerLink="dashboard" aria-label="GlobalRiders">
-              <img class="navbar-brand-logo" src="../assets/images/white-logo.png" alt="Logo"
-                data-hs-theme-appearance="default">
-            </a>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p">
-              <li class="nav-item" style="padding-right: 35px; font-size: 20px;">
-                <a class="nav-link text-white navbar-link" aria-current="page" routerLink="home"
-                  routerLinkActive="active">Home</a>
-              </li>
-              <li class="nav-item" style="padding-right: 35px; font-size: 20px;">
-                <a class="nav-link text-white navbar-link" aria-current="page" routerLink="explore"
-                  routerLinkActive="active">Explore</a>
-              </li>
-              <li class="nav-item" style="padding-right: 35px; font-size: 20px;">
-                <a class="nav-link text-white navbar-link" aria-current="page" routerLink="chat"
-                  routerLinkActive="active">Chat</a>
-              </li>
-            </ul>
-            <form class="d-flex my-2 me-5 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-dark my-2 my-sm-0 ms-2" type="submit">Search</button>
-            </form>
-            <ul class="navbar-nav ms-4 mb-2 mb-lg-0 p">
-              <li class="nav-item">
-                <div class="dropdown">
-                  <a class="navbar-dropdown-account-wrapper profile-link" href="javascript:;" id="accountNavbarDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"
-                    data-bs-dropdown-animation="" routerLinkActive="active">
-                    <div class="d-flex" style="font-size: x-large;">
-                      <i class="bi bi-person-circle text-white" style="margin-left: 2px; font-size: x-large;"></i>
-                      <h5 class="mb-0 text-white" style="padding-left: 5px; align-content:space-evenly">Nisarg</h5>
-                    </div>
-                  </a>
-                  <div
-                    class="dropdown-menu dropdown-menu-end navbar-dropdown-menu navbar-dropdown-menu-borderless navbar-dropdown-account"
-                    aria-labelledby="accountNavbarDropdown" style="width: 16rem; margin-top: 20px;">
-                    <a class="dropdown-item" routerLink="profile">My Profile</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item"  style="cursor: pointer;" (click)="performLogout()">Sign Out</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>  
-        <h2 style="color: #6528d8;">Designed exclusively<br>for riders. <span class="type-text app" style="display: inline;"
-            >By riders.</span></h2>
-
-
-
-        <!-- <p>
-          + Effortless ride planning.<br>
-          + A truly transcending ride experience.<br>
-          + Unforgettable scenic route recommendations.<br>
-          + Immersive journeys beyond just transportation.<br>
-          + Best place to hang-out when you are not on your bike.<br>
-          + Seamless integration with GPS for easy route planning.
-        </p> -->
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2 style="color: #6528d8;">Designed exclusively<br>for riders.
+          <span class="type-text" style="display: inline;" #typewriterText [@typewriter]>By riders.</span>
+        </h2>
         <div class="span">It's time to shift gears.</div>
         <div class="app" style="margin-left: 970px;">
           <a href="#" target="_blank"><img src="assets/images/apple-badge.png" alt="iOS"></a>
@@ -75,31 +18,6 @@
         </div>
       </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-transparent">
-      <div class="container">
-        <a class="navbar-brand" href="#">Transparent</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-          data-target="#navbar-transparent" aria-controls="navbarNav" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-bar"></span>
-          <span class="navbar-toggler-bar"></span>
-          <span class="navbar-toggler-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-transparent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <div class="card">
       <div class="carousel-container">
         <div class="carousel-overlay"></div>
@@ -121,6 +39,44 @@
         </p-carousel>
       </div>
     </div>
+    <div class="navigation-example">
+      <h1 class="d-flex text-white mb-4 justify-content-center">WHY CHOOSE US?</h1>
+      <div class="row">
+        <div class="col-lg-6 d-flex justify-content-center min-vh-lg-100 text-white" style="padding-top: 29px;">
+          <ul class="section-list" style="font-size: 21px;">
+            <li>Effortless ride planning.</li>
+            <li>A truly transcending ride experience.</li>
+            <li>Unforgettable scenic route recommendations.</li>
+            <li>Immersive journeys beyond just transportation.</li>
+            <li>Best place to hang-out when you are not on your bike.</li>
+            <li>Seamless integration with GPS for easy route planning.</li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-12 sm-py-mobile justify-content-center">
+                <div class="pb-sm-4 row">
+                    <div class="col-md-6 col-12 t-center xs-pb-mobile text-center">
+                      <img class="pb-sm-1 xxs-pb-mobile" src="../../../assets/images/helmet.jpg" style="width: 100px; display: block; margin: auto;" alt="">
+                      <h5 class="text-white single-line">Safety First Approach</h5>
+                    </div>
+                    <div class="col-md-6 col-12 t-center xs-pb-mobile text-center">
+                      <img class="pb-sm-1 xxs-pb-mobile" src="../../../assets/images/namaste.jpg" style="width: 100px; display: block; margin: auto;" alt="">
+                      <h5 class="text-white single-line">Welcoming &amp; Friendly Guides</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12 t-center xs-pb-mobile text-center">
+                      <img class="pb-sm-1 xxs-pb-mobile" src="../../../assets/images/street-map.jpg" style="width: 100px; display: block; margin: auto;" alt="">
+                      <h5 class="text-white single-line">Smartly Planned Itinerary</h5>
+                    </div>
+                    <div class="col-md-6 col-12 t-center xs-pb-mobile text-center">
+                      <img class="pb-sm-1 xxs-pb-mobile" src="../../../assets/images/teamwork.png" style="width: 100px; display: block; margin: auto;" alt="">
+                      <h5 class="text-white single-line">No Outsourcing Own</h5>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+    
     <div class="elements-row elements-row-one">
       <div class="elements-row-col left-col">
         <div class="phone-image scroll-animated animate">
@@ -199,38 +155,38 @@
     <p>Hi</p>
     <footer>
       <div class="container">
-          <div class="row">
-              <div class="col-md-6">
-                  <img class="logo" src="../../../assets/images/logo4.png">
-                  <div class="footer-link">
-                      <a href="mailto:vroom@globalriders.co">vroom@globalriders.co</a>
-                  </div>
-                  <br>
-                  <div class="footer-link">
-                      <a href="/terms-and-conditions.html">Terms &amp; Conditions</a><br>
-                      <a href="/privacy-policy.html">Privacy Policy</a>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="mail">Stay Connected</div>
-                  <div class="clearfix"></div>
-                  <div class="social">
-                      <a target="_blank" href="#">
-                          <img src="assets/images/social-fb.svg" alt="Twitter Logo">
-                      </a>
-                      <a target="_blank" href="#">
-                          <img src="assets/images/social-linked.svg" alt="Twitter Logo">
-                      </a>
-                      <a target="_blank" href="#">
-                          <img src="assets/images/social-insta.svg" alt="Twitter Logo">
-                      </a>
-                      <a target="_blank" href="#">
-                          <img src="assets/images/social-twitter.svg" alt="Twitter Logo">
-                      </a>
-                  </div>
-              </div>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="logo" src="../../../assets/images/logo4.png">
+            <div class="footer-link">
+              <a href="mailto:vroom@globalriders.co">vroom&#64;globalriders.co</a>
+            </div>
+            <br>
+            <div class="footer-link">
+              <a href="/terms-and-conditions.html">Terms &amp; Conditions</a><br>
+              <a href="/privacy-policy.html">Privacy Policy</a>
+            </div>
           </div>
+          <div class="col-md-6">
+            <div class="mail">Stay Connected</div>
+            <div class="clearfix"></div>
+            <div class="social">
+              <a target="_blank" href="#">
+                <img src="assets/images/social-fb.svg" alt="Twitter Logo">
+              </a>
+              <a target="_blank" href="#">
+                <img src="assets/images/social-linked.svg" alt="Twitter Logo">
+              </a>
+              <a target="_blank" href="#">
+                <img src="assets/images/social-insta.svg" alt="Twitter Logo">
+              </a>
+              <a target="_blank" href="#">
+                <img src="assets/images/social-twitter.svg" alt="Twitter Logo">
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-  </footer>
+    </footer>
   </div>
 </main>
